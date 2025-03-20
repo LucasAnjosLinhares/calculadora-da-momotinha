@@ -59,25 +59,19 @@
     <div class="login-container">
       <h2>Calculadora da Momotinha</h2>
       <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever a palavra magicaaaa</p>
-      <p class="message">Obs: AS LETRAS SÃO TODAS MAIUSCULAAAAAAS</p>
+      <p class="message">Obs: NÃO TEM ESPAÇO E AS LETRAS SÃO TODAS MAIUSCULAAAAAAS</p>
       <form id="loginForm">
         <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
         <button type="submit" class="btn-login">Entrar</button>
       </form>
     </div>
-
     <script>
       document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Impede o comportamento padrão do formulário (recarregar a página)
-
+        e.preventDefault();
         const senha = document.getElementById('senha').value.trim();
-        
-        // Verifica se a senha é a correta
-        if(senha === "Euteamo") {
-          // Se a senha estiver correta, redireciona para a calculadora
-          window.location.href = 'calculadora.html'; // Caminho para a página de calculadora
+        if(senha === "EUTEAMO") {
+          window.location.href = 'calculadora.html';
         } else {
-          // Se a senha estiver errada, exibe uma mensagem de erro
           alert('Senha incorreta! Tente novamente.');
         }
       });
