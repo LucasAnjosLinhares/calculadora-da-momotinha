@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora da Momotinha</title>
+    <script>
+      // Senha para acessar a página
+      const senhaCorreta = "Eu te amo";
+      function checarSenha() {
+        let senha = prompt("Digite a senha para acessar a calculadora:");
+        
+        if (senha === senhaCorreta) {
+          window.location = "calculadora.html";
+        } else {
+          alert("Senha incorreta. Tente novamente.");
+          checarSenha();
+        }
+      }
+
+      window.onload = checarSenha;
+    </script>
+  </head>
+  <body>
+    <h1>Oieee minha princesa, antes de prosseguir, diga a palavrinha mágica!</h1>
+  </body>
+</html>
