@@ -61,7 +61,7 @@
         bottom: -10px;
         font-size: 2rem;
         color: #ff4b7f;
-        animation: floatUp 3s linear infinite;
+        animation: floatUp 5s linear infinite;
         opacity: 0.7;
       }
       @keyframes floatUp {
@@ -95,8 +95,6 @@
     <div class="login-container">
       <h2>Calculadora da Momotinha</h2>
       <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever as palavras magicas!!!</p>
-      <p class="message">Obs: AS PALAVRAS NÃO POSSUEM ESPAÇOS E AS LETRAS SÃO TODAS MAIUSCULAS</p>
-      
       <form id="loginForm">
         <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
         <button type="submit" class="btn-login">Entrar</button>
@@ -110,24 +108,24 @@
         if(senha === "EUTEAMO") {
           mostrarEfeitoRomantico();
           setTimeout(() => {
-            window.location.href = 'calculadora.html';
-          }, 3000);
+            window.location.href = 'calculadora.html'; 
+          }, 5000);
         } else {
           alert('Senha incorreta! Tente novamente.');
         }
       });
       function mostrarEfeitoRomantico() {
-        document.getElementById('loveMessage').style.display = 'block';
-        for(let i = 0; i < 20; i++) { 
+        document.getElementById('loveMessage').style.display = 'block'; 
+        for(let i = 0; i < 30; i++) { 
           let heart = document.createElement('div');
           heart.classList.add('heart');
           heart.innerHTML = '❤️';
           heart.style.left = Math.random() * 100 + 'vw';
-          heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          heart.style.animationDuration = (Math.random() * 5 + 2) + 's'; 
           document.body.appendChild(heart);
           setTimeout(() => {
             heart.remove();
-          }, 3000);
+          }, 5000);
         }
       }
     </script>
