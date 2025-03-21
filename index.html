@@ -13,6 +13,7 @@
         align-items: center;
         min-height: 100vh;
         font-family: 'Arial', sans-serif;
+        overflow: hidden;
       }
       .login-container {
         background: #ffffff;
@@ -22,6 +23,8 @@
         text-align: center;
         width: 100%;
         max-width: 400px;
+        position: relative;
+        z-index: 2;
       }
       .login-container h2 {
         color: #ff6f91;
@@ -53,28 +56,78 @@
       .btn-login:hover {
         background-color: #ff4b7f;
       }
+      .heart {
+        position: fixed;
+        bottom: -10px;
+        font-size: 2rem;
+        color: #ff4b7f;
+        animation: floatUp 3s linear infinite;
+        opacity: 0.7;
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) scale(0.5);
+          opacity: 0;
+        }
+      }
+      .love-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        background: #ff4b7f;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(255, 0, 100, 0.7);
+        display: none;
+        z-index: 3;
+      }
     </style>
   </head>
   <body>
     <div class="login-container">
       <h2>Calculadora da Momotinha</h2>
-      <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever as palavras magicaaaas</p>
-      <p class="message">Obs: NÃO TEM ESPAÇO E AS LETRAS SÃO TODAS MAIUSCULAAAAAAS</p>
+      <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever a palavra magicaaaa</p>
       <form id="loginForm">
         <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
         <button type="submit" class="btn-login">Entrar</button>
       </form>
     </div>
+    <div class="love-message" id="loveMessage">EU TAMBÉM TE AMO MEU AMORZINHO!!! APROVEITE SUA CALCULADORA ❤️</div>
     <script>
       document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const senha = document.getElementById('senha').value.trim();
-        if(senha === "EUTEAMO") {
-          window.location.href = 'calculadora.html';
+        if(senha === "Euteamo") {
+          mostrarEfeitoRomantico();
+          setTimeout(() => {
+            window.location.href = 'calculadora.html';
+          }, 3000);
         } else {
           alert('Senha incorreta! Tente novamente.');
         }
       });
+      function mostrarEfeitoRomantico() {
+        document.getElementById('loveMessage').style.display = 'block';
+        for(let i = 0; i < 20; i++) { 
+          let heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.innerHTML = '❤️';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          document.body.appendChild(heart);
+          setTimeout(() => {
+            heart.remove();
+          }, 3000);
+        }
+      }
     </script>
   </body>
 </html>
