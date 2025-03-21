@@ -94,7 +94,9 @@
   <body>
     <div class="login-container">
       <h2>Calculadora da Momotinha</h2>
-      <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever a palavra magicaaaa</p>
+      <p class="message">Oieeee minha momotinha, antes de acessar a sua calculadorazinha, você precisa escrever as palavras magicas!!!</p>
+      <p class="message">Obs: AS PALAVRAS NÃO POSSUEM ESPAÇOS E AS LETRAS SÃO TODAS MAIUSCULAS</p>
+      
       <form id="loginForm">
         <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
         <button type="submit" class="btn-login">Entrar</button>
@@ -105,7 +107,7 @@
       document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const senha = document.getElementById('senha').value.trim();
-        if(senha === "Euteamo") {
+        if(senha === "EUTEAMO") {
           mostrarEfeitoRomantico();
           setTimeout(() => {
             window.location.href = 'calculadora.html';
